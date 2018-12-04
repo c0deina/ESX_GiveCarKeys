@@ -7,7 +7,9 @@ https://github.com/ESX-Org/esx_vehicleshop
 How to make it work:
 
 · Move the esx_givecarkeys folder to your resources folder
+
 · Add start esx_givecarkeys to server.cfg
+
 · Restart server
 
 · Hop into a owned car and do /givecarkeys and the nearest player will receive the car.
