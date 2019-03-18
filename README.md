@@ -15,3 +15,14 @@ How to make it work:
 · Hop into a owned car and do /givecarkeys and the nearest player will receive the car.
 
 No big deal, if you want to roleplay a car sale, make sure to roleplay he pays you too.
+
+
+If you want to have the option to be able to use a menu to hand the keys
+
+use this event from your menu
+
+RegisterServerEvent('esx_givecarkeys:frommenu')
+AddEventHandler('esx_givecarkeys:frommenu', function ()
+	TriggerClientEvent('esx_givecarkeys:keys', source)
+end)
+
