@@ -21,8 +21,7 @@ function giveCarKeys()
 	local coords    = GetEntityCoords(playerPed)
 
 	if IsPedInAnyVehicle(playerPed,  false) then
-        vehicle = GetVehiclePedIsIn(playerPed, false)
-				
+        vehicle = GetVehiclePedIsIn(playerPed, false)			
     else
         vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 7.0, 0, 70)
     end
