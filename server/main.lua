@@ -58,7 +58,6 @@ AddEventHandler('esx_givecarkeys:setVehicleOwnedPlayerId', function (playerId, v
 
 	function (rowsChanged)
 		TriggerClientEvent('esx:showNotification', playerId, 'You have got a new car with plate ~g~' ..vehicleProps.plate..'!', vehicleProps.plate)
-
 	end)
 end)
 
@@ -70,8 +69,7 @@ function trim(s)
     end
 end
 
-
-
-TriggerEvent('es:addCommand', 'givecarkeys', function(source, args, user)
+RegisterCommand('givecarkeys', function(source, args, user)
 TriggerClientEvent('esx_givecarkeys:keys', source)
 end)
+
