@@ -9,6 +9,7 @@ Citizen.CreateThread(function()
 	end
 end)
 
+
 RegisterNetEvent("esx_givecarkeys:keys")
 AddEventHandler("esx_givecarkeys:keys", function()
 
@@ -26,15 +27,18 @@ function giveCarKeys()
         vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 7.0, 0, 70)
     end
 
+
 	local plate = GetVehicleNumberPlateText(vehicle)
 	local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
-
+	
 
 	ESX.TriggerServerCallback('esx_givecarkeys:requestPlayerCars', function(isOwnedVehicle)
+		if not isOwnedVehicle then
+			ESX.ShowNotification('You dont own any cars nearby.')
+		elseif isOwnedVehicle then
+			local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+		
 
-		if isOwnedVehicle then
-
-		local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
 if closestPlayer == -1 or closestDistance > 3.0 then
   ESX.ShowNotification('No players nearby!')
